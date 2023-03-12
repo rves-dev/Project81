@@ -2,74 +2,72 @@
     margin: 0;
     padding: 0;
     line-height: 1.9rem;
+    scroll-behavior: smooth;
 }
 
 body{
     background-image: url(img/map_wallpaper.jpg);
     background-repeat: repeat;
-    background-size: cover;
+    background-size: auto;
     color: rgb(27, 27, 27);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     line-height: 1.6em;
     font-size: 16px;
     margin: 0;
+    overflow-x: hidden;
 }
 
 .container{
     width: 90%;
     margin: auto;
-    overflow: hidden;
 }
 
 .clear-fix{
     clear: both;
 }
 
-#main-container{
-    width: 90%;
-    margin: auto;
-    overflow: hidden;
-    display: flex;
-    flex-wrap: wrap;
-}
-
 #main-header{
     background-color: rgb(36, 36, 36);
-    color: rgb(196, 192, 192);
-    letter-spacing: 1.5em;
+    letter-spacing: 1.3em;
     text-align: center;
-    padding: 15px;
+    padding: 20px 0px;
+    text-decoration: none;
     position: fixed;
     width: 100%;
+}
+#main-header a{
+    text-decoration: none;
+    color: rgb(196, 192, 192);
 }
 
 #headercopy{
     background-color: rgb(36, 36, 36);
     color: rgb(196, 192, 192);
-    letter-spacing: 1.5em;
+    letter-spacing: 1.3em;
     text-align: center;
-    padding: 20px;
+    padding: 20px 0px;
     width: 100%;
-
 }
 
 #navbar{
     background-color: rgb(236, 241, 158);
     color: black;
-    padding: 10px;
-    padding-top: 10px;
+    padding: 10px 0px;
+    width: 100%;
 }
 
 #navbar .container{
     display: flex;
     flex-wrap: wrap;
-    width: 80%;
+    width: 78%;
+    margin: auto;
 }
 
 #navbar li{
     padding: 0;
     display: inline;
     list-style:none;
+    margin: auto;
 }
 
 #navbar a{
@@ -83,22 +81,32 @@ body{
 }
 
 #ul1{
-    flex: 2;
+    flex: 1000;
     text-align: left;
 }
-
 #ul2{
-    flex: 1;
+    flex: 250;
+}
+#ul3{
+    flex: 500;
     text-align: right;
 }
 main{
     background-color: rgb(193, 202, 139);
     width: 75%;
+    min-height: 75vh ;
     margin: auto;
-    background-repeat: no-repeat;
-    background-size: cover;
     padding: 20px;
 }
+
+#main-container{
+    width: 90%;
+    margin: auto;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .main-side{
     order: 2;
     flex:2;
@@ -157,6 +165,18 @@ h3{
     color: antiquewhite;
 }
 
+.scrollup{
+    position: fixed;
+    bottom: 6%;
+    right: 0;
+    transition: 300ms;
+    opacity: 50%;
+}
+.scrollup:hover{
+    opacity: 80%;
+    transition: 300ms;
+}
+
 footer{
     text-align: center;
     width: 100%;
@@ -164,9 +184,54 @@ footer{
     margin: auto;
     background-color: #333;
     color: white;
-    border: 1px black solid;
-    padding: 15px;
+    padding: 20px 0px;
 }
+
+#gallery-container{
+    border: 2px solid black;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 1fr 4fr;
+    grid-gap: 5px;
+}
+.gallery-heading{
+    background-color: coral;
+    grid-column: 1/3;
+    grid-row: 1/2;
+    text-align: center;
+    height: 500px;
+}
+.gallery-pictures{
+    background-color: teal;
+    grid-column: 2/3;
+    grid-row: 2/3;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.gallery-pictures img{
+    width: 100%;
+}
+.gallery-sidebar{
+    background-color: lime;
+    grid-column: 1/2;
+    grid-row: 2/3;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @media(max-width:800px){
 
@@ -174,11 +239,18 @@ footer{
         flex-direction: column;
     }
 
-    #ul1,#ul2{
-        float: none;
+    #navbar .container{
+        width: 100%;
+    }
+
+    #ul1,#ul3{
+        display: inline;
         width: 100%;
         margin: auto;
         text-align: center;
+    }
+    #ul2{
+        flex: 1;
     }
 }
 
